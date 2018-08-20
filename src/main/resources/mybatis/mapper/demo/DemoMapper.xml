@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zh.mapper.demo.DemoMapper">
+
+    <select id="findById" resultType="com.zh.entity.demo.Demo">
+        SELECT * FROM info WHERE id=#{id}
+    </select>
+    <insert id="insertInfo" parameterType="com.zh.entity.demo.Demo"  useGeneratedKeys="true" keyProperty="id">
+    INSERT INTO  `info`(`name`,`age`,`addr`)VALUES (#{name},#{age},#{addr});
+    </insert>
+    
+</mapper>
